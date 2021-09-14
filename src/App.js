@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import MainPage from './components/MainPage';
+import NavBar from './components/NavBar';
+import NintendoPage from './components/NintendoPage';
+import PCPage from './components/PCPage';
+import PlayStationPage from './components/PlayStationPage';
+import XboxPage from './components/XboxPage';
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 function App() {
   return (
+    <Router>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!!
-        </a>
-      </header>
+      <NavBar/>
+      <Switch>
+        <Route path="/">
+          <MainPage/>
+        </Route>
+        <Route path="/nintendo" exact>
+          <NintendoPage/>
+        </Route>
+        <Route path="/pc" exact>
+          <PCPage/>
+        </Route>
+        <Route path="/playstation" exact>
+          <PlayStationPage/>
+        </Route>
+        <Route path="/xbox" exact>
+          <XboxPage/>
+        </Route>
+      </Switch>
+    
     </div>
+    </Router>
   );
 }
 
