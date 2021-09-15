@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import React from "react";
 import ReviewForm from "./ReviewForm";
 import CardContainer from "./CardContainer";
-import SearchBar from "./SearchBar";
 
 const MainPage = () => {
   const [games, setGames] = useState([]);
@@ -17,7 +16,6 @@ const MainPage = () => {
 
   return (
     <div>
-      <SearchBar/>
       <div className="main">
         <CardContainer games={topThree} />
       </div>
