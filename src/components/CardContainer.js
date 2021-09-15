@@ -1,11 +1,13 @@
 import React from "react";
+import Card from "./Card";
 import { Grid } from "@material-ui/core";
-import { Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    display: "flex",
+    flexDirection: "row",
   },
   paper: {
     height: 250,
@@ -17,14 +19,21 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Card = ({ game }) => {
+const CardContainter = ({ games }) => {
   const classes = useStyles();
 
+  const cardsToShow = games.map((game) => <Card game={game} key={game.id} />);
+
   return (
-    <Grid item>
-      <Paper className={classes.paper}>{game.title}</Paper>
+    <Grid
+      container
+      className={classes.root}
+      spacing={10}
+      justifyContent="space-around"
+    >
+      {cardsToShow}
     </Grid>
   );
 };
 
-export default Card;
+export default CardContainter;
