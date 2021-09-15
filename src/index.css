@@ -33,3 +33,11 @@ code {
 .review {
   margin-top: 30px;
 }
+.search {
+  display: flex;
+  justify-content: center;
+}
+.searchi {
+  margin-top: 100px;
+  margin-left: 20px;
+}

@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexShrink: 2
   },
   paper: {
     height: 250,
@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     paddingTop: '100%', // 16:9
+    minWidth: "500px"
   },
   control: {
     padding: theme.spacing(2),
@@ -50,7 +51,7 @@ const Cards = ({ game }) => {
                <br></br>
                publisher:{game.publisher}
                <br></br>
-               Rating: "10"
+               Rating: {game.reviews[0].score}/10
              </Typography>
            </CardContent>
            </Card>
