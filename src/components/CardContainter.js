@@ -5,6 +5,8 @@ import { makeStyles } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
+      display: "flex",
+      flexDirection: "row"
     },
     paper: {
       height: 250,
@@ -20,11 +22,9 @@ const useStyles = makeStyles((theme) => ({
 const CardContainter = () => {
     const classes = useStyles();
     return (
-        <div>
             <Grid container className={classes.root} spacing={10} justifyContent="space-around">
                 <Card/>
             </Grid>
-        </div>
     )
 }
 

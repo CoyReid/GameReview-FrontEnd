@@ -18,11 +18,11 @@ const useStyles = makeStyles((theme) => ({
 const Card = () => {
     const classes = useStyles();
     return (
-        <div>
+        <Grid container className={classes.root} spacing={10} justifyContent="space-around">
             <Grid item >
                     <Paper className={classes.paper}>Content</Paper>
             </Grid>
-        </div>
+        </Grid>
     )
 }
 

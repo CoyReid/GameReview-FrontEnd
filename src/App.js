@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <NavBar/>
       <Switch>
-        <Route path="/">
+        <Route path="/" exact>
           <MainPage/>
         </Route>
         <Route path="/nintendo" exact>
