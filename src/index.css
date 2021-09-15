@@ -41,3 +41,12 @@ code {
   margin-top: 100px;
   margin-left: 20px;
 }
+
+.review {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.review-page {
+}

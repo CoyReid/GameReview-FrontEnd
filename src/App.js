@@ -6,6 +6,7 @@ import PCPage from './components/PCPage';
 import PlayStationPage from './components/PlayStationPage';
 import XboxPage from './components/XboxPage';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+import ReviewPage from './components/ReviewPage';
 
 function App() {
   return (
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         <Route path="/" exact>
           <MainPage/>
+        </Route>
+        <Route path="/game/:id">
+          <ReviewPage/>
         </Route>
         <Route path="/nintendo" exact>
           <NintendoPage/>
