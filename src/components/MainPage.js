@@ -1,30 +1,29 @@
-import { useEffect, useState } from 'react';
-import React from 'react'
-import ReviewForm from './ReviewForm';
-import CardContainter from './CardContainter';
-
+import { useEffect, useState } from "react";
+import React from "react";
+import ReviewForm from "./ReviewForm";
+import CardContainer from "./CardContainer";
 
 const MainPage = () => {
-    const [games, setGames] = useState([])
+  const [games, setGames] = useState([]);
 
-    useEffect(() => {
-        fetch("http://localhost:9292/games/sort_by_rating")
-        .then(r => r.json())
-        .then(setGames)
-    }, [])
+  useEffect(() => {
+    fetch("http://localhost:9292/games/sort_by_rating")
+      .then((r) => r.json())
+      .then(setGames);
+  }, []);
 
-    const topThree = games.slice(0, 3)
+  const topThree = games.slice(0, 3);
 
-    return (
-        <div>
-        <div className="main">
-            <CardContainter games={topThree}/>
-        </div>
-        <div className="form">
-            <ReviewForm/>
-        </div>
-        </div>
-    )
-}
+  return (
+    <div>
+      <div className="main">
+        <CardContainer games={topThree} />
+      </div>
+      <div className="form">
+        <ReviewForm />
+      </div>
+    </div>
+  );
+};
 
-export default MainPage
+export default MainPage;
