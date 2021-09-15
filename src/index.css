@@ -24,3 +24,11 @@ code {
   margin-left: auto;
   margin-right: auto;
 }
+.form {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.review {
+  margin-top: 30px;
+}
