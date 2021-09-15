@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import Cards from "./Card";
 import { Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 
@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
 const CardContainter = ({ games }) => {
   const classes = useStyles();
 
-  const cardsToShow = games.map((game) => <Card game={game} key={game.id} />);
+  const cardsToShow = games.map((game) => <Cards game={game} key={game.id} />);
 
   return (
     <Grid
