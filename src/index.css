@@ -46,3 +46,12 @@ code {
 #formBtn {
   /* width: 60px !important; */
 }
+
+.review {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.review-page {
+}

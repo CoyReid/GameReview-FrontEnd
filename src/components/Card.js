@@ -7,6 +7,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,8 +19,9 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   media: {
-    paddingTop: '100%', // 16:9
-    minWidth: "500px"
+    paddingTop: '90%', // 16:9
+    minWidth: "500px",
+    minHeight: "120px"
   },
   control: {
     padding: theme.spacing(2),
@@ -40,11 +42,13 @@ const Cards = ({ game }) => {
              title={game.title}
              subheader={game.genre}
            />
+           <Link to={`/game/${game.id}`}>
            <CardMedia
              className={classes.media}
              image={game.image_url}
              title="gif"
            />
+           </Link>
            <CardContent>
              <Typography className="cardDetails" variant="body2" color="textSecondary" component="p">
                platform:{game.platform}
