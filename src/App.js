@@ -6,6 +6,7 @@ import PCPage from './components/PCPage';
 import PlayStationPage from './components/PlayStationPage';
 import XboxPage from './components/XboxPage';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
+
 function App() {
   return (
     <Router>

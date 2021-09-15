@@ -17,12 +17,17 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 
-const CardContainter = () => {
+const CardContainter = ({games}) => {
     const classes = useStyles();
+
+    const cardsToShow = games.map((game) => (
+        <Card game={game} key={game.id}/>
+    ))
+
     return (
         <div>
             <Grid container className={classes.root} spacing={10} justifyContent="space-around">
-                <Card/>
+                {cardsToShow}
             </Grid>
         </div>
     )
