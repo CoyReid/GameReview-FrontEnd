@@ -20,7 +20,7 @@ code {
 
 .main {
   display: flex;
-  margin-top: 200px;
+  margin-top: 150px;
   margin-left: auto;
   margin-right: auto;
   justify-content: space-around;
@@ -36,8 +36,9 @@ code {
 .search {
   display: flex;
   justify-content: center;
+  ;
 }
 .searchi {
   margin-top: 100px;
-  margin-left: 20px;
+  
 }
