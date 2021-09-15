@@ -15,8 +15,13 @@ const useStyles = makeStyles((theme) => ({
       padding: theme.spacing(2),
     },
   }));
-const Card = () => {
+
+
+const Card = ({game}) => {
     const classes = useStyles();
+
+    console.log(game)
+
     return (
         <Grid container className={classes.root} spacing={10} justifyContent="space-around">
             <Grid item >
