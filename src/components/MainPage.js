@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import React from "react";
-import ReviewForm from "./ReviewForm";
 import CardContainer from "./CardContainer";
 
 const MainPage = () => {
@@ -18,9 +17,6 @@ const MainPage = () => {
     <div>
       <div className="main">
         <CardContainer games={topThree} />
-      </div>
-      <div className="form">
-        <ReviewForm />
       </div>
     </div>
   );
