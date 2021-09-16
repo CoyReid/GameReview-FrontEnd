@@ -10,8 +10,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import ListItemAvatar from "@material-ui/core/ListItemAvatar";
 import Avatar from "@material-ui/core/Avatar";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import TextField from "@material-ui/core/TextField";
-import { Button } from "@material-ui/core";
+import CommentForm from "./CommentForm";
 import ReviewForm from "./ReviewForm";
 
 const useStyles = makeStyles((theme) => ({
@@ -59,29 +58,6 @@ const ReviewPage = () => {
       .then((r) => r.json())
       .then(setGames);
   }, [idNumber, commentForm]);
-
-  function handleChange(e) {
-    setCommentForm(e.target.value);
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    if (commentForm !== "") {
-      const newComment = {
-        user_id: 1,
-        review_id: 31,
-        content: commentForm,
-      };
-      fetch("http://localhost:9292/comments", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(newComment),
-      });
-      setCommentForm("");
-    } else {
-      alert("Please fill out the Review Form!");
-    }
-  }
 
   if (Object.keys(game).length !== 0) {
     return (
@@ -137,29 +113,7 @@ const ReviewPage = () => {
                 </>
               ))}
             </List>
-            <form className={classes.form} onSubmit={handleSubmit}>
-              <Typography color="inherit" variant="h5">
-                Add a Comment here
-              </Typography>
-              <TextField
-                id="filled-full-width"
-                label="Comment Text"
-                style={{ margin: 8 }}
-                placeholder="Write your comment here..."
-                fullWidth
-                margin="normal"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                variant="filled"
-                value={commentForm}
-                onChange={handleChange}
-                type="text"
-              />
-              <Button id="formBtn" variant="outlined" type="submit">
-                Submit
-              </Button>
-            </form>
+            <CommentForm review={review} commentForm={commentForm} setCommentForm={setCommentForm}/>
           </div>
         ))}
         <div>
