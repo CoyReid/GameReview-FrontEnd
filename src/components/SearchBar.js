@@ -7,9 +7,16 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles(() => ({
   root: {
     marginTop: "100px",
-    backgroundColor: "#4EE081",
+    backgroundColor: "#1A2B23",
     marginLeft: "20px",
+    boxShadow: "-2px 12px 14px 0px rgba(0,0,0,0.89)",
+    borderRadius: "3px",
+    color: "white"
+
   },
+  dropDown:{
+    padding: "0px 5px 0px 5px"
+  }
 }));
 
 const SearchBar = ({
@@ -48,7 +55,7 @@ const SearchBar = ({
         onChange={handleSearchChange}
       />
       <Select
-        className={classes.root}
+        className={`${classes.root} ${classes.dropDown}`}
         labelId="demo-customized-select-label"
         id="demo-customized-select"
         onChange={handleFirstFilterChange}
@@ -61,7 +68,7 @@ const SearchBar = ({
         ))}
       </Select>
       <Select
-        className={classes.root}
+        className={`${classes.root} ${classes.dropDown}`}
         labelId="demo-customized-select-label"
         id="demo-customized-select"
         onChange={handleSecondFilterChange}

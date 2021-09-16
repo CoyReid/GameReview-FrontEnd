@@ -9,16 +9,27 @@ import Divider from '@material-ui/core/Divider';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const useStyles = makeStyles({
     root: {
-      maxWidth: 345,
+      maxWidth: 500,
       marginTop: "100px",
-      marginLeft: "30px"
+      marginLeft: "30px",
+      maxHeight: 470
     },
     media: {
-      height: 400,
-      maxWidth: 500
+      height: 470,
+      maxWidth: 500,
+      minWidth: 350
+    },
+    text: {
+      color: "white"
+    },
+    loader: {
+      margin: "200px auto 0 auto",
+      display: 'flex',
+      justifyContent: "center",
     },
   });
 
@@ -38,52 +49,68 @@ const [game, setGames] = useState({})
       .then((r) => r.json())
       .then(setGames);
   }, [idNumber]);
-const review = game.reviews || [{"comments": [{"user": ["profile_url"]}], "user": [{"name" : ""}, {"profile_url" : ""}]} ]
-const reviews = review[0]
-const comment = reviews.comments[0]
-console.log(reviews.user.name)
+
+// console.log(reviews.user.name)
 // const fetchItem = async () => {
 //     const fetchItem = await fetch(`http://localhost:9292/games/${idNumber}`)
 //     const Item = await fetchItem.json(); 
 //     setGames(Item)    
 // }   
+if(Object.keys(game).length !== 0){
     return (
         <div className="review-page">
             <Card className={classes.root}>
                 <CardMedia component="img" className={classes.media} image={game.image_url} title={game.image_url} alt="a game cover">
                 </CardMedia>
             </Card>
-            <div className="review">
-            <Avatar alt="Remy Sharp" src={reviews.user.profile_url} />
-            <Typography variant="h5">{reviews.user.name}</Typography>
-            <Typography variant="body1">{reviews.content}</Typography>
+            {game.reviews.map((review) => (
+              <div className="review">
+              <div className="review-header">
+              <Avatar alt="Remy Sharp" src={review.user.profile_url} />
+              <Typography className={classes.text} variant="h5">{review.user.name}</Typography>
+              </div>
+              <Typography className={classes.text} variant="body1">{review.content}</Typography>
+              <List className={classes.root}>
+                {review.comments.map((comment) => (
+                  <>
+                  <ListItem alignItems="flex-start">
+                  <ListItemAvatar>
+                    <Avatar alt="Remy Sharp" src={comment.user.profile_url} />
+                  </ListItemAvatar>
+                  <ListItemText className={classes.text}
+                    primary={comment.user.name}
+                    secondary={
+                      <React.Fragment> 
+                        <Typography className={classes.text}
+                          component="span" 
+                          variant="body2"
+                          color="textPrimary"
+                        >
+                          {comment.content}
+                        </Typography>
+                      </React.Fragment>
+                    }
+                  />
+                </ListItem>
+                <Divider variant="inset" component="li" />
+                </>
+
+                ))}
+              
+             </List>
             </div>
-            <List className={classes.root}>
-      <ListItem alignItems="flex-start">
-        <ListItemAvatar>
-          <Avatar alt="Remy Sharp" src={comment.user.profile_url} />
-        </ListItemAvatar>
-        <ListItemText
-          primary={comment.user.name}
-          secondary={
-            <React.Fragment>
-              <Typography
-                component="span"
-                variant="body2"
-                className={classes.inline}
-                color="textPrimary"
-              >
-                {comment.content}
-              </Typography>
-            </React.Fragment>
-          }
-        />
-      </ListItem>
-      <Divider variant="inset" component="li" />
-      <Divider variant="inset" component="li" />
-    </List>
-        </div>
+        
+            ))}
+          </div>
+            
     )
+  }
+  else{
+    return(
+      <div className={classes.loader}>
+        <CircularProgress />
+      </div>)
+  }
 }
 
 export default ReviewPage

@@ -11,7 +11,9 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexShrink: 2
+    width: "300px",
+    height: "400px",
+    background: "#17191d"
   },
   paper: {
     height: 250,
@@ -19,12 +21,16 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   media: {
-    paddingTop: '90%', // 16:9
-    minWidth: "500px",
+    paddingTop: '25%',
+    paddingBottom: "2%", // 16:9
+    minWidth: "200px",
     minHeight: "120px"
   },
   control: {
     padding: theme.spacing(2),
+  },
+  text: {
+    color: "white"
   },
 }));
 
@@ -42,7 +48,7 @@ const Cards = ({ game }) => {
   return (
     <Grid item>
        <Card className={classes.root}>
-           <CardHeader
+           <CardHeader id = "text"
              action={
                <IconButton aria-label="settings">
                </IconButton>
@@ -51,14 +57,14 @@ const Cards = ({ game }) => {
              subheader={game.genre}
            />
            <Link to={`/game/${game.id}`}>
-           <CardMedia
+           <CardMedia 
              className={classes.media}
              image={game.image_url}
              title="gif"
            />
            </Link>
            <CardContent>
-             <Typography className="cardDetails" variant="body2" color="textSecondary" component="p">
+             <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
                platform:{game.platform}
                <br></br>
                publisher:{game.publisher}

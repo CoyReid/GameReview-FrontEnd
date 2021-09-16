@@ -58,7 +58,7 @@ const ReviewForm = ({game}) => {
   }
 
   return (
-    <div className="review">
+    <div className="reviewForm">
       <form className={classes.root} onSubmit={handleSubmit}>
         <Typography color="inherit" variant="h3">
           Create Review Here

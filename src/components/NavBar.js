@@ -32,7 +32,8 @@ const headersData = [
 const useStyles = makeStyles(() => ({
     toolbar: {
         display: "flex",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        padding: 0
     },
     menuButton: {
         fontFamily: "Open Sans, sans-serif",
@@ -41,7 +42,9 @@ const useStyles = makeStyles(() => ({
         marginLeft: "38px",
      },
     header: {
-      backgroundColor: "#4EE081",
+      backgroundColor: "#1A2B23",
+      boxShadow: "-2px 12px 14px 0px rgba(0,0,0,0.89)",
+      padding: "0px 90px 0px 90px"
     },
     logo: {
       fontFamily: "Work Sans, sans-serif",
@@ -73,9 +76,8 @@ const NavBar = () => {
     const titleLogo = (<Typography variant="h6" component="h1" className={logo}>GameReview</Typography>)
     const display= () => {return <Toolbar className={toolbar}>{titleLogo}<div>{getMenuButtons()}</div></Toolbar>}
     return (
-        <header>
             <AppBar className={header}>{display()}</AppBar>
-        </header>
+        
             
        
     )
