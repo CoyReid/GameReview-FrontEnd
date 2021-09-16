@@ -48,7 +48,8 @@ code {
 
 .review-page {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: auto auto auto auto;
 }
 
 #text :first-child span {
@@ -57,4 +58,9 @@ code {
 
 .review-header {
   display: flex;
+}
+
+.game-details {
+  display: flex;
+  flex-direction: row;
 }
