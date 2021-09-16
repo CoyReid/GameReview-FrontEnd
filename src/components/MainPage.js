@@ -11,7 +11,7 @@ const MainPage = () => {
       .then(setGames);
   }, []);
 
-  const topThree = games.slice(0, 3);
+  const topThree = games.slice(3, 7);
 
   return (
     <div>
