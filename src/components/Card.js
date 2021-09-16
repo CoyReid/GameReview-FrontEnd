@@ -50,6 +50,7 @@ const Cards = ({ game }) => {
            />
            <Link to={`/game/${game.id}`}>
            <CardMedia 
+             id="cardpic"
              className={classes.media}
              image={game.image_url}
              title="gif"
@@ -57,9 +58,9 @@ const Cards = ({ game }) => {
            </Link>
            <CardContent>
              <Typography className={classes.text} variant="body2" color="textSecondary" component="p">
-               platform:{game.platform}
+               Platform: {game.platform}
                <br></br>
-               publisher:{game.publisher}
+               Publisher: {game.publisher}
                <br></br>
                Rating: {game.avg}/10
              </Typography>
