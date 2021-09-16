@@ -77,7 +77,7 @@ const ReviewPage = () => {
         </div>
         </div>
         {game.reviews.map((review) => (
-          <div className="review" key={review.id}>
+          <div className="review">
             <div className="review-header">
               <Avatar alt="Remy Sharp" src={review.user.profile_url} />
               <Typography className={classes.text} variant="h5">
@@ -90,7 +90,7 @@ const ReviewPage = () => {
             <List className={classes.root}>
               {review.comments.map((comment) => (
                 <>
-                  <ListItem alignItems="flex-start" key={comment.id}>
+                  <ListItem alignItems="flex-start">
                     <ListItemAvatar>
                       <Avatar alt="Remy Sharp" src={comment.user.profile_url} />
                     </ListItemAvatar>
