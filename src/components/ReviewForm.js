@@ -39,7 +39,7 @@ const ReviewForm = ({game}) => {
       const newReview = {
         ...formData,
         user_id: 1,
-        game_id: 1
+        game_id: 31
       }
       fetch("http://localhost:9292/reviews", {
         method: "POST",
