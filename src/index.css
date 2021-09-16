@@ -39,9 +39,9 @@ code {
 }
 
 .review {
-  max-width: 400px;
-  margin-left: 30px;
-  margin-top: 150px;
+  max-width: 750px;
+  margin-left: 150px;
+  margin-top: 120px;
   background-color: #17191d;
   padding: 20px;
 }
@@ -65,6 +65,13 @@ code {
   flex-direction: row;
 }
 
-#cardpic {
-  object-fit: contain !important;
+.reviewForm {
+  margin: 0px 230px;
+}
+.game-title {
+  margin: auto;
+  background: #17191d;
+  width: 500px;
+  height: 300px;
+  text-align: center;
 }
