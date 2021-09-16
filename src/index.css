@@ -37,9 +37,6 @@ code {
   display: flex;
   justify-content: center;
 }
-#formBtn {
-  /* width: 60px !important; */
-}
 
 .review {
   max-width: 400px;
