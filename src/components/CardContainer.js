@@ -28,8 +28,8 @@ const CardContainter = ({ games }) => {
     <Grid
       container
       className={classes.root}
-      spacing={10}
-      justifyContent="space-around"
+      spacing={5}
+      justifyContent="space-between"
     >
       {cardsToShow}
     </Grid>

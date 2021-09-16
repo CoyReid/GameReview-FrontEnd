@@ -39,7 +39,7 @@ const ReviewForm = ({game}) => {
       const newReview = {
         ...formData,
         user_id: 1,
-        game_id: 1
+        game_id: 27
       }
       fetch("http://localhost:9292/reviews", {
         method: "POST",
@@ -58,7 +58,7 @@ const ReviewForm = ({game}) => {
   }
 
   return (
-    <div className="review">
+    <div className="reviewForm">
       <form className={classes.root} onSubmit={handleSubmit}>
         <Typography color="inherit" variant="h3">
           Create Review Here
