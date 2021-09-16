@@ -38,6 +38,11 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
   },
+  gameText: {
+    margin: "auto",
+    color: "white",
+    marginLeft: "150px"
+  }
 }));
 
 const ReviewPage = () => {
@@ -81,6 +86,7 @@ const ReviewPage = () => {
   if (Object.keys(game).length !== 0) {
     return (
       <div className="review-page">
+        <div className="game-details">
         <Card className={classes.root}>
           <CardMedia
             component="img"
@@ -90,6 +96,8 @@ const ReviewPage = () => {
             alt="a game cover"
           ></CardMedia>
         </Card>
+        <Typography variant="h4" className={classes.gameText}>{game.title}<br></br>{game.platform}<br></br>{game.publisher}<br></br>{game.avg}</Typography>
+        </div>
         {game.reviews.map((review) => (
           <div className="review" key={review.id}>
             <div className="review-header">
