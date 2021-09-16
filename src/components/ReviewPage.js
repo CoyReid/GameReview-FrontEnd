@@ -50,7 +50,7 @@ console.log(reviews.user.name)
     return (
         <div className="review-page">
             <Card className={classes.root}>
-                <CardMedia className={classes.media} image={game.image_url}>
+                <CardMedia component="img" className={classes.media} image={game.image_url} title={game.image_url} alt="a game cover">
                 </CardMedia>
             </Card>
             <div className="review">
