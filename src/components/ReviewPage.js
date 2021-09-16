@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   gameText: {
     margin: "auto",
     color: "white",
-    marginLeft: "150px"
+    marginTop: "60px"
   }
 }));
 
@@ -72,7 +72,9 @@ const ReviewPage = () => {
             alt="a game cover"
           ></CardMedia>
         </Card>
-        <Typography variant="h4" className={classes.gameText}>{game.title}<br></br>{game.platform}<br></br>{game.publisher}<br></br>{game.avg}</Typography>
+        <div className="game-title">
+        <Typography variant="h4" className={classes.gameText}>Title: {game.title}<Typography>Platform: {game.platform}<br></br>Publisher: {game.publisher}</Typography><Typography variant="h5">Score: {game.avg}</Typography></Typography>
+        </div>
         </div>
         {game.reviews.map((review) => (
           <div className="review">

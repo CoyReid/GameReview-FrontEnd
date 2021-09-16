@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "300px",
-    height: "400px",
+    height: "auto",
     background: "#17191d"
   },
   paper: {
@@ -21,10 +21,13 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
   },
   media: {
-    paddingTop: '25%',
-    paddingBottom: "2%", // 16:9
-    minWidth: "200px",
-    minHeight: "120px"
+    paddingTop: '100%',
+    paddingBottom: "2%", 
+    paddingRight: "",
+    // minWidth: "200px",
+    // minHeight: "120px"
+    width: "100%",
+    height: "120px"
   },
   control: {
     padding: theme.spacing(2),
