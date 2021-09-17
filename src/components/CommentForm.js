@@ -7,6 +7,16 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
   },
+  btn: {
+    background: "#1a2b23",
+  },
+  textfield: {
+    background: "#1a2b23",
+  },
+  text: {
+    color: "White",
+    margin: "auto"
+  }
 }));
 
 export default function CommentForm({ review, commentForm, setCommentForm }) {
@@ -38,6 +48,7 @@ export default function CommentForm({ review, commentForm, setCommentForm }) {
   return (
     <form className={classes.form} onSubmit={handleSubmit}>
       <TextField
+        className={classes.textfield}
         id="filled-full-width"
         label="Comment Text"
         style={{ margin: 8 }}
@@ -52,7 +63,7 @@ export default function CommentForm({ review, commentForm, setCommentForm }) {
         onChange={handleChange}
         type="text"
       />
-      <Button id="formBtn" variant="outlined" type="submit">
+      <Button id="formBtn" className={classes.textfield} variant="outlined" type="submit">
         Submit
       </Button>
     </form>

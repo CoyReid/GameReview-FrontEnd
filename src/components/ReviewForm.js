@@ -14,7 +14,14 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column"
   },
   btn: {
-    maxWidth: "15px"
+    background: "#1a2b23",
+  },
+  textfield: {
+    background: "#1a2b23",
+  },
+  text: {
+    color: "White",
+    margin: "auto"
   }
 }));
 
@@ -60,10 +67,11 @@ const ReviewForm = ({game}) => {
   return (
     <div className="reviewForm">
       <form className={classes.root} onSubmit={handleSubmit}>
-        <Typography color="inherit" variant="h3">
+        <Typography className={classes.text} color="inherit" variant="h3">
           Create Review Here
         </Typography>
         <TextField
+        className={classes.textfield}
           id="filled-full-width"
           label="Review Text"
           style={{ margin: 8 }}
@@ -83,6 +91,7 @@ const ReviewForm = ({game}) => {
           multiline
         />
         <TextField
+          className={classes.textfield}
           label="Score 1-10"
           id="filled-margin-none"
           placeholder="Write your Game score here..."
@@ -92,7 +101,7 @@ const ReviewForm = ({game}) => {
           type="text"
           name="score"
         />
-        <Button id="formBtn" variant="outlined" type="submit">Submit</Button>
+        <Button id="formBtn" className={classes.textfield} variant="outlined" type="submit">Submit</Button>
       </form>
     </div>
   );
