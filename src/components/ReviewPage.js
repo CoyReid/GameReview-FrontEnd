@@ -47,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
 const ReviewPage = () => {
   const classes = useStyles();
 
-  let { id } = useParams();
+  let  { id }  = useParams();
   let idNumber = { id }.id;
 
   const [game, setGames] = useState({});

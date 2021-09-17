@@ -23,7 +23,7 @@ code {
 }
 .main {
   display: flex;
-  margin-top: 150px;
+  margin-top: 90px;
   margin-left: auto;
   margin-right: auto;
   justify-content: space-around;
@@ -63,14 +63,35 @@ code {
 .game-details {
   display: flex;
   flex-direction: row;
+  background: #17191d;
+  margin-top: 90px;
+  height: 650px;
+  padding-bottom: 50px;
 }
 .reviewForm {
-  margin: 0px 230px;
+  margin: 0px 150px;
+  background-color: #17191d;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  padding-left: 80px;
+  padding-right: 94px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 }
 .game-title {
   margin: auto;
-  background: #17191d;
+  background: #141517;
   width: 500px;
   height: 300px;
   text-align: center;
+}
+.table {
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+  margin: auto;
+  background-color: #5f6165;
+  border-radius: 10px;
+  margin-top: 40px;
+  margin-bottom: 50px;
 }
