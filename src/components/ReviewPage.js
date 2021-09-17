@@ -52,12 +52,17 @@ const ReviewPage = () => {
 
   const [game, setGames] = useState({});
   const [commentForm, setCommentForm] = useState("");
+  const [formData, setFormData] = useState({
+    score: "",
+    content: ""
+  })
+
 
   useEffect(() => {
     fetch(`http://localhost:9292/games/${idNumber}`)
       .then((r) => r.json())
       .then(setGames);
-  }, [idNumber, commentForm]);
+  }, [idNumber, commentForm, formData]);
 
   if (Object.keys(game).length !== 0) {
     return (
@@ -119,7 +124,7 @@ const ReviewPage = () => {
           </div>
         ))}
         <div>
-          <ReviewForm game={game}/>
+          <ReviewForm game={game} formData={formData} setFormData={setFormData}/>
         </div>
       </div>
     );

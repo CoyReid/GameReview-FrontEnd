@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
@@ -25,13 +25,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-const ReviewForm = ({game}) => {
+const ReviewForm = ({game, formData, setFormData}) => {
   const classes = useStyles();
-
-  const [formData, setFormData] = useState({
-    score: "",
-    content: ""
-  })
 
   function handleChange(e) {
     setFormData({
